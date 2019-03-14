@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot name="multipleshapes">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+    <!--
+      Hello,
+         I am a multi-line XML comment
+         <staticText>
+            <reportElement x="180" y="0" width="200" height="20"/>
+            <text><![CDATA[Hello World!]]></text>
+          </staticText>
+      -->
+  <link name="right_leg">
+    <visual>
+      <geometry>
+        <box size="0.6 0.1 0.2"/>
+      </geometry>
+     <origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_right_leg" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_leg"/>
+    <origin xyz="0 -0.22 0.25"/>
+  </joint>
+
+</robot>
