@@ -258,4 +258,14 @@
     <origin xyz="0.04 0 0"/>
   </joint>
 
+  <link name="base_footprint">
+    <xacro:default_inertial mass="1"/>
+  </link>
+
+  <joint name="tofootprint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.47"/>
+  </joint>
+
 </robot>
