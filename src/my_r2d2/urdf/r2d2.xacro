@@ -268,4 +268,14 @@
     <origin xyz="0 0 0.47"/>
   </joint>
 
+  <link name="eye">
+    <xacro:default_inertial mass="1"/>
+  </link>
+
+  <joint name="toeye" type="fixed">
+    <parent link="lens"/>
+    <child link="eye"/>
+    <origin xyz="0.1 0 0" rpy="0 1.57075 0"/>
+  </joint>
+
 </robot>
