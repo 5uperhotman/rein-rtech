@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "range_publisher");
   ros::NodeHandle n;
   
-  ros::Publisher range_publisher = n.advertise<sensor_msgs::Range>("Range", 1000);
+  ros::Publisher range_publisher = n.advertise<sensor_msgs::Range>("range", 1000);
   ros::Rate loop_rate(10);
   int count = 0;
   while (ros::ok())
@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     //ss << v << count;
     //msg.data = ss.str();
 
-    ROS_INFO("%f", msg.range);
+    //ROS_INFO("%f", msg.range);
     range_publisher.publish(msg);
     //range_Range.publish(msg);
     ros::spinOnce();
