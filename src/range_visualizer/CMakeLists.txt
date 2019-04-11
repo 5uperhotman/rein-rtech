@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+
 )
 
 ## System dependencies are found with CMake's conventions
@@ -55,7 +56,7 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
+#add_service_files(
 #   FILES
 #   Service1.srv
 #   Service2.srv
@@ -71,7 +72,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   sensor_msgs#   std_msgs
+#   std_msgs
 # )
 
 ################################################
@@ -108,6 +109,7 @@ catkin_package(
 #  LIBRARIES range_visualizer
 #  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
+#  CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -186,15 +188,8 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-#############
-## Testing ##
-#############
 
-## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_range_visualizer.cpp)
-# if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
-# endif()
+add_executable(range_node src/range_node.cpp)
+target_link_libraries(range_node ${catkin_LIBRARIES})
+#add_dependencies(range_node range_visualizer_generate_messages_cpp)
 
-## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
