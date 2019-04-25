@@ -193,3 +193,7 @@ add_executable(range_node src/range_node.cpp)
 target_link_libraries(range_node ${catkin_LIBRARIES})
 #add_dependencies(range_node range_visualizer_generate_messages_cpp)
 
+add_executable(ultra src/ultra.cpp)
+target_link_libraries(ultra ${catkin_LIBRARIES})
+
+
