@@ -46,7 +46,7 @@ void loop()
   sensor_range.max_range= 4;
   sensor_range.field_of_view = 0.785;
   sensor_range.header.frame_id = "base_link"; 
-  nh.spinOnce();
   chatter.publish(&sensor_range);
+  nh.spinOnce();
   delay(20);
 }
