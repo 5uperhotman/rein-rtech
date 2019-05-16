@@ -4,9 +4,6 @@ project(planning_tutorial)
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   moveit_ros_planning_interface
   moveit_visual_tools
@@ -203,3 +200,4 @@ include_directories(
 
 add_executable(panda_robot1 src/panda_robot1.cpp)
 target_link_libraries(panda_robot1 ${catkin_LIBRARIES})
+
