@@ -3,10 +3,10 @@
 
 <robot name="motoman_sia5d" xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:include filename="$(find motoman_sia5d_support)/urdf/sia5d_macro.xacro"/>
-	<xacro:motoman_sia5d prefix="right"/>
+	<xacro:motoman_sia5d prefix="right_"/>
 
 	<xacro:include filename="$(find motoman_sia5d_support)/urdf/sia5d_macro.xacro"/>
-	<xacro:motoman_sia5d prefix="left"/>
+	<xacro:motoman_sia5d prefix="left_"/>
 
 
 	<material name="blue">
@@ -25,14 +25,14 @@
 
 	<joint name="right_link" type="fixed">
 		<parent link="base_link"/>
-		<child link="right_link"/>
-		<origin xyz="0.5 0 0.25" rpy="0 0 0"/>
+		<child link="right_base_link"/>
+		<origin xyz="0.5 0 0.25" rpy="0 0 1.57"/>
 	</joint>
 
 	<joint name="left_link" type="fixed">
 		<parent link="base_link"/>
-		<child link="left_link"/>
-		<origin xyz="-0.5 0 0.25" rpy="0 0 0"/>
+		<child link="left_base_link"/>
+		<origin xyz="-0.5 0 0.25" rpy="0 0 1.57"/>
 	</joint>
 
 </robot>
