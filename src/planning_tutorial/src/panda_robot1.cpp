@@ -37,14 +37,20 @@ int main(int argc, char** argv)
   // from the new start state above.  The initial pose (start state) does not
   // need to be added to the waypoint list but adding it can help with visualizations
   geometry_msgs::Pose target_pose = move_group.getCurrentPose().pose;
+   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   move_group.setNamedTarget("tri_1");
+  move_group.plan(my_plan);
+  move_group.execute(my_plan);
+  
   move_group.setNamedTarget("tri_2");
-  move_group.setNamedTarget("home_pose");
-
-  moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   move_group.plan(my_plan);
   move_group.execute(my_plan);
 
+  move_group.setNamedTarget("home_pose");
+  move_group.plan(my_plan);
+  move_group.execute(my_plan); 
+  //move_group.setNamedTarget("tri_2");
+  //move_group.setNamedTarget("home_pose");
 
 /*
   std::vector<geometry_msgs::Pose> waypoints;
