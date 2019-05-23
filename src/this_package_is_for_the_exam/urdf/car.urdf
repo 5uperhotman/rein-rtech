@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<robot name="car">
+
+  <material name="red">
+	<color rgba="1.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="gray">
+	<color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+
+  <link name="base_link">
+
+  </link>
+
+  <joint name="box_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="box_link"/>
+    <origin xyz="0 0 0.3"/>
+  </joint>
+
+  <link name="box_link">
+    <visual>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.4 0.2"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+  </link>
+
+
+  <joint name="base_to_wheel1" type="fixed">
+    <parent link="box_link"/>
+    <child link="wheel1_link"/>
+    <origin xyz="-0.3 -0.225 -0.1"/>
+  </joint>
+
+  <link name="wheel1_link">
+    <visual>
+	<origin rpy="1.57 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+	<material name="gray"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_wheel2" type="fixed">
+    <parent link="box_link"/>
+    <child link="wheel2_link"/>
+    <origin xyz="-0.3 0.225 -0.1"/>
+  </joint>
+
+  <link name="wheel2_link">
+    <visual>
+	<origin rpy="1.57 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+	<material name="gray"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_wheel3" type="fixed">
+    <parent link="box_link"/>
+    <child link="wheel3_link"/>
+    <origin xyz="0.3 -0.225 -0.1"/>
+  </joint>
+
+  <link name="wheel3_link">
+    <visual>
+	<origin rpy="1.57 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+	<material name="gray"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_wheel4" type="fixed">
+    <parent link="box_link"/>
+    <child link="wheel4_link"/>
+    <origin xyz="0.3 0.225 -0.1"/>
+  </joint>
+
+  <link name="wheel4_link">
+    <visual>
+	<origin rpy="1.57 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+	<material name="gray"/>
+    </visual>
+  </link>
+
+ <joint name="base_to_arm" type="fixed">
+    <parent link="box_link"/>
+    <child link="arm_link"/>
+    <origin xyz="0.3 0.055 -0.1"/>
+  </joint>
+
+  <link name="arm_link">
+    <visual>
+	<origin rpy="1.57 1.57 1.57" xyz="0.25 0 0"/>
+      <geometry>
+        <cylinder length="0.5" radius="0.03"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+  </link>
+
+ <joint name="arm_to_wheel5" type="fixed">
+    <parent link="arm_link"/>
+    <child link="wheel5_link"/>
+    <origin xyz="0.5 -0.04 0"/>
+  </joint>
+
+  <link name="wheel5_link">
+    <visual>
+	<origin rpy="1.57 1.57 0" xyz="0 -0.015 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+	<material name="gray"/>
+    </visual>
+  </link>
+
+
+
+
+</robot>

@@ -1,0 +1,10 @@
+<launch>
+
+<param name="robot_description" command="cat '$(find this_package_is_for_the_exam)/urdf/car.urdf'" />
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find this_package_is_for_the_exam)/config/car.rviz​"/>
+<node name="fake_r2d2_controller" pkg="r2d2_navigator" type="fake_r2d2_controller" args="-d $(find r2d2_navigator)/src/fake_r2d2_controller.cpp​"/>
+
+
+
+</launch>
